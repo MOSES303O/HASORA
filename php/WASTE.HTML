@@ -1,0 +1,138 @@
+<div id="tit">
+    <h2>Serial Number:DWFEV234R</h2>
+    <h2>Name:MOSES OCHIENG</h2>
+</div>
+<div id="tot">
+    <div id="a"><a href="#">DEPOSIT</a></div>
+    <div id="b"><a href="#">WITHDRAW</a>
+    </div>
+</div>
+
+
+
+<div id="centerb">
+    <div id="h1">
+        <div id="title">
+            <h1>BANKING</h1>
+        </div>
+        <div id="bk">
+        </div>
+    </div>
+    <div id="h2">
+        <div id="title">
+            <h1>TRANSACTION HISTORY</h1>
+        </div>
+        <div id="histo"></div>
+    </div>
+</div>
+
+<div id="C2">
+    <div id="title">
+        <h1>TRANSACTION HISTORY</h1>
+    </div>
+    <div id="histo">NI PESA SINA</div>
+</div>
+
+
+
+<div class="random-div" id="search">
+    <input type="text" placeholder="Search... ">
+    <button type="submit"><img src="IMAGES/search.png " alt=" "></button>
+</div>
+<div class="random-div" id="user">
+    <a href="#" id="btn"><button>Add New</button></a>
+    <a href="users.php" id="btn"><img src="IMAGES/message.png"></a>
+    <div id="imagecase">
+        <img src="IMAGES/account.png" alt="">
+    </div>
+</div>
+
+
+
+<div id="descrip-text>
+    <P>Interract with customers and friends through the chat section and also send m....</P>
+    <a href=" # ">continue reading...</a>                        
+</div>
+
+
+/* nav ul li { list-style: none; margin: 2px; color: green; } nav ul li a { text-decoration: none; color: black; display: flex; align-content: center; justify-items: center; padding: 19px; margin: 0; } nav ul li a:hover { color: green; background: transparent;
+} nav ul li a img { display: row; align-items: center; justify-content: space-between; width: 20px; height: 20px; }*/
+
+
+<audio id="audio " src=" music/french_montana_moses_ft._chris_brown_migos_mp3_7483.mp3 "></audio>
+    <script>
+        window.addEventListener('load', function() {
+            var audio = document.getElementById('audio');
+            audio.play();
+        });
+    </script>
+
+
+
+    <?php
+session_start();
+    include_once "connect.php ";
+    $fname = mysqli_real_escape_string($conn, $_POST['fname']);
+    $lname = mysqli_real_escape_string($conn, $_POST['lname']);
+    $date = mysqli_real_escape_string($conn, $_POST['ddmmyy']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $acc = mysqli_real_escape_string($conn, $_POST['acc']);
+    $phone = mysqli_real_escape_string($conn, $_POST['phone']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $gender = mysqli_real_escape_string($conn, $_POST['GENDER']);
+    $role = mysqli_real_escape_string($conn, $_POST['ROLE']);
+    $location = mysqli_real_escape_string($conn, $_POST['location']);
+    if(!empty($fname) && !empty($lname) && !empty($email) && !empty($role) && !empty($password)&& !empty($date) && !empty($acc) && !empty($phone) && !empty($gender) && !empty($location)){
+        if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $sql = mysqli_query($conn, "SELECT * FROM users WHERE email='{$email}' ");
+            if(mysqli_num_rows($sql) > 0){
+                echo "$email - This email already exist! ";
+            }else{
+                if(isset($_FILES['image'])){
+                    $img_name = $_FILES['image']['name'] OR $_FILES['img1']['name'];
+                    $img_type = $_FILES['image']['type'] OR $_FILES['img1']['type'];
+                    $tmp_name = $_FILES['image']['tmp_name'] OR $_FILES['img1']['tmp_name'];
+                    
+                    $img_explode = explode('.',$img_name);
+                    $img_ext = end($img_explode);
+                    $extensions = ["jpeg ", "png ", "jpg "];
+                    if(in_array($img_ext, $extensions) === true){
+                        $types =["image/jpeg ", "image/jpg " , "image/png "] OR ["img1/jpeg ","img1/jpg ", "img1/png "];
+                        if(in_array($img_type, $types) === true){
+                            $time = time();
+                            $new_img_name = $time.$img_name;
+                            if(move_uploaded_file($tmp_name,"images/ ".$new_img_name)){
+                                $ran_id = rand(time(), 100000000);
+                                $status = "Active now ";
+                                $encrypt_pass = md5($password);
+                                $insert_query = mysqli_query($conn, "INSERT INTO users (unique_id,role, fname, lname,date,phone,account, email, password,location,gender, img, img1, status) VALUES ({$ran_id}, '{$role}', '{$fname}', '{$lname}',
+    '{$date}', '{$phone}', '{$acc}', '{$email}', '{$encrypt_pass}', '{$location}', '{$gender}', '{$new_img_name}', '{$new_img_name}', '{$status}') ");
+                                if($insert_query){
+                                    $select_sql2 = mysqli_query($conn, "SELECT * FROM users WHERE email='{$email}' ");
+                                    if(mysqli_num_rows($select_sql2) > 0){
+                                        $result = mysqli_fetch_assoc($select_sql2);
+                                        $_SESSION['unique_id'] = $result['unique_id'];
+                                        header("location: ../user.php ");
+                                        echo "SUCCESS ";  
+                                    }else{
+                                        echo "This email address not Exist! ";
+                                    }
+                                }else{
+                                    echo "Something went wrong. Please try again! ";
+                                }
+                            }
+                        }else{
+                            echo "Please upload an image file - jpeg, png, jpg ";
+                        }
+                    }else{
+                        echo "Please upload an image file - jpeg, png, jpg ";
+                    }
+                }
+            }
+        }else{
+            echo "$email is not a valid email! ";
+        }
+    }else{
+        echo "All input fields are required! ";
+    }
+?>

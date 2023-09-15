@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME PAGE</title>
+    <link rel="stylesheet" href="css/HOME.css">
+</head>
+
+<body>
+    <ul class="notifications"></ul>
+    <script>
+        const notifications = document.querySelector(".notifications");
+
+        const toastDetails = {
+            timer: 5000,
+            success: {
+                icon: 'fa-circle-check',
+                text: 'CONGRATULATIONS:Future is here.',
+            }
+        }
+
+        const removeToast = (toast) => {
+            toast.classList.add("hide");
+            if (toast.timeoutId) clearTimeout(toast.timeoutId);
+            setTimeout(() => toast.remove(), 1000);
+        }
+
+        const createToast = (id) => {
+            const {
+                icon,
+                text
+            } = toastDetails[id];
+            const toast = document.createElement("li");
+            toast.className = `toast ${id}`;
+            toast.innerHTML = `<div class="column">
+                         <i class="fa-solid ${icon}"></i>
+                         <span>${text}</span>
+                      </div>
+                      <i class="fa-solid fa-xmark" onclick="removeToast(this.parentElement)"></i>`;
+            notifications.appendChild(toast);
+            toast.timeoutId = setTimeout(() => removeToast(toast), toastDetails.timer);
+        };
+        window.addEventListener('load', function() {
+            createToast('success');
+        });
+    </script>
+    <section id="header">
+        <div id="logo">
+            <h1>OCHIENG'S ENTERPRISE</h1>
+        </div>
+        <div class="timer">
+            <div class="tyto">
+                <h1>LAUNCHING DATES</h1>
+            </div>
+            <div class="countdowner">
+                <div class="counter">
+                    <div class="bigtext" id="days"></div>
+                    <span>DAYS</span>
+                </div>
+                <div class="counter">
+                    <div class="bigtext" id="hours"></div>
+                    <span>HOURS</span>
+                </div>
+                <div class="counter">
+                    <div class="bigtext" id="minutes"></div>
+                    <span>MINUTES</span>
+                </div>
+                <div class="counter">
+                    <div class="bigtext" id="seconds"></div>
+                    <span>SECONDS</span>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div id="header1">
+            <div id="title">HASORA</div>
+            <h2>VALUE FROM PURCHASE POWER</h2>
+            <p>TRUSTED FINANCIAL SOLUTIONS</p>
+            <div id="buttons">
+                <a href=general.php>sign-up</a><a href="LOGIN.php">login</a>
+            </div>
+        </div>
+    </section>
+    <div id="sidebar">
+        <nav>
+            <ul>
+                <li>
+                    <a class="active" href="home.html">HOME</a>
+                </li>
+                <li>
+                    <a href="services.html">SERVICES</a.act>
+                </li>
+                <li>
+                    <a href="blogs.html">BLOGS</a>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+    <div id="sidebarbutton"><img src="IMAGES/bar.png" id="sbtn"></div>
+    <script>
+        var sidebtn = document.getElementById("sidebarbutton");
+        var sidebar = document.getElementById("sidebar");
+        var stn = document.getElementById("sbtn");
+        sidebtn.onclick = function() {
+            if (sidebar.style.right == "-130px") {
+                sidebar.style.right = "0";
+            } else {
+                sidebar.style.right = "-130px";
+            }
+        }
+    </script>
+    <section id="services">
+        <div id="title-t">
+            <h2>SERVICES</h2>
+            <P>Why Sign-up TODAY</P>
+        </div>
+        <div id="cards">
+            <div id="card">
+                <h1>Digital-Harambee</h1>
+                <div id="descrip">
+                    <div id="descrip-img"><img src="IMAGES/pp.png"></div>
+                    <div id="descrip-text">
+                        <p>As a business owner you can get flexible loans from your loyal customers through....</p>
+                        <a href="blogs.html">continue reading...</a>
+                    </div>
+                </div>
+                <h1>Community</h1>
+                <div id="descrip">
+                    <div id="descrip-img"><img src="IMAGES/com.jpg"></div>
+                    <div id="descrip-text">
+                        <p>Manage(repay) your loans using community loan management plan where....</p>
+                        <a href="blogs.html">continue reading...</a>
+                    </div>
+                </div>
+                <h1>Money-Transfer</h1>
+                <div id="descrip">
+                    <div id="descrip-img"><img src="IMAGES/pay.png"></div>
+                    <div id="descrip-text">
+                        <p>Peer to peer money free transfer and pay for goods freely without....</p>
+                        <a href="blogs.html">continue reading...</a>
+                    </div>
+                </div>
+                <h1>Dashboards</h1>
+                <div id="descrip">
+                    <div id="descrip-img"><img src="IMAGES/ledger.png"></div>
+                    <div id="descrip-text">
+                        <p>Real time monitor your business performance and special....</p>
+                        <a href="blogs.html">continue reading...</a>
+                    </div>
+                </div>
+                <h1>Chat-space</h1>
+                <div id="descrip ">
+                    <div id="descrip-img "><img src="IMAGES/comments.png "></div>
+                    <div id="descrip-text ">
+                        <p>Interract with customers and friends through the chat section and also send m....</p>
+                        <a href="blogs.html">continue reading...</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="card-img"><img src="IMAGES/me.jpg"></div>
+        </div>
+    </section>
+    <section id="offer">
+        <div id="title">
+            <h1><i>SPECIAL OFFER</i></h1>
+            <P>Quicker loan repayment ,bill spliting with friends and loan limit extension through community</P>
+            <a href="blogs.html">learn more</a>
+        </div>
+    </section>
+    <section id="footer">
+
+        <div id="foot1">
+            <div id="logo">
+                <h1>OCHIENG'S ENTERPRISE</h1>
+            </div>
+            <div id="contact">
+                <div id="title">
+                    <h2>Contact Information</h2>
+                </div>
+                <h5>Email:MOSEJCK303@GMAIL.COM</h5>
+                <h5>Phone:0769764619</h5>
+                <h5>Address:023:Nyawita,Maseno,Kisumu county</h5>
+
+            </div>
+        </div>
+        <div id="foot2">
+            <div id="social-media">
+                <h2>Follow us on</h2>
+                <a href="facebook.com"><img src="IMAGES/icons8-facebook-24.png" alt=""></a>
+                <a href="twitter.com"><img src="IMAGES/icons8-twitter-24.png" alt=""></a>
+            </div>
+        </div>
+        <ol>
+            <b>COUNTRIES SUPPORTED:</b>
+            <li>KENYA</li>
+            <li>UGANDA</li>
+            <li>SOMALIA</li>
+        </ol>
+        <div id="foot3">
+            <div id="paymentg">
+                <div id="title">
+                    <h2>Payment Gateways</h2>
+                </div>
+                <h4>M-pesa</h4>
+                <h4>Banks</h4>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div id="copyright">
+            <p>@2023,copyright OCHIENG'S ENTERPRISE</p>
+        </div>
+    </section>
+    <script src="js/script.js"></script>
+</body>

@@ -1,0 +1,108 @@
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-style: bold;
+}
+
+body {
+    background: linear-gradient(to right, transparent, rgb(22, 50, 50)), url(../IMAGES/uu.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+
+#container {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px 0 15px;
+}
+
+span {
+    color: aliceblue;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    padding: 10px o 10px 0;
+}
+
+header {
+    color: antiquewhite;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 5px 10px 0;
+}
+
+#input-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    height: 45px;
+    width: 90%;
+    background: rgb(22, 50, 50);
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    padding: 0 0 0 45px;
+}
+
+.input:hover {
+    background: rgb(22, 50, 40);
+    color: green;
+}
+
+img {
+    position: relative;
+    top: -40px;
+    left: 10px;
+}
+
+::-webkit-input-placeholder {
+    color: rgb(162, 162, 162);
+}
+
+#submit {
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+    height: 45px;
+    outline: none;
+    width: 100%;
+    background: rgb(100, 149, 142);
+    cursor: pointer;
+    transition: .3s;
+}
+
+#submit:hover {
+    box-shadow: 9x 5px 7px 1px rgba(247, 5, 5, 0.2);
+}
+
+#button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: small;
+    color: azure;
+    margin-top: 10px;
+}
+
+#left {
+    display: flex;
+}
+
+label a {
+    color: rgb(168, 33, 60);
+    text-decoration: none;
+}

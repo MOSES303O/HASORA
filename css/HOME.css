@@ -1,0 +1,560 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1 {
+    color: green;
+    font-weight: 200;
+}
+
+span {
+    font-size: 0.5em;
+    color: indigo;
+}
+
+#header {
+    background: linear-gradient(to right, transparent, rgb(22, 47, 47)), url(../IMAGES/mg/Z8.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.timer {
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 3.5em;
+}
+
+.countdowner {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    margin-left: 1.5em;
+}
+
+.bigtext {
+    color: rgb(7, 188, 248);
+}
+
+.counter {
+    justify-content: space-around;
+    width: 3em;
+    height: 3em;
+}
+
+#logo {
+    margin-left: 30px;
+    padding-top: 30px;
+    color: green;
+    font-style: italic;
+}
+
+#header #header1 {
+    color: rgb(4, 223, 132);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 0;
+}
+
+#header #header1 #title {
+    font-size: 40px;
+    text-decoration: double;
+    font-style: oblique;
+    transform: rotate3D(20deg);
+    border-bottom-right-radius: 35px;
+    border-top-left-radius: 40px;
+}
+
+#header #header1 h2 {
+    font-size: 40px;
+    padding: 20px 0;
+}
+
+#header #header1 p {
+    font-size: 25px;
+}
+
+#header #header1 #buttons {
+    height: 15vh;
+    width: 30vw;
+    font-size: 30%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#header #header1 #buttons a {
+    width: 100px;
+    font-size: 30px;
+    border: 2px solid white;
+    padding: 10px 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #FFF;
+}
+
+#sidebar {
+    position: fixed;
+    width: 130px;
+    height: 100vh;
+    top: 0;
+    right: -130px;
+    background: gray;
+    z-index: 5;
+    transition: 0.5s;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 40px 15px;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 15px;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: green;
+}
+
+nav ul li a.active::after {
+    content: '';
+    width: 30%;
+    height: 2px;
+    background: green;
+    position: absolute;
+    bottom: -4px;
+    left: 5px;
+}
+
+#sidebarbutton {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 7;
+    background: blue;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-right: 10px
+}
+
+#services {
+    width: 100%;
+    padding: 90px 0;
+    background-color: rgb(25, 50, 50);
+}
+
+#title-t {
+    text-align: center;
+    padding-bottom: 70px;
+}
+
+#title-t h2 {
+    margin: auto;
+    font-size: 50px;
+    color: grey;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+}
+
+#title-t h2::after {
+    content: " ";
+    width: 110px;
+    height: 50px;
+    background: linear-gradient(green, transparent);
+    position: absolute;
+    top: -10px;
+    left: 0;
+    z-index: -1;
+    transform: rotate(20deg);
+    border-bottom-right-radius: 35px;
+    border-top-left-radius: 40px;
+}
+
+#title-t p {
+    font-size: 50px;
+}
+
+#cards {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex: wrap;
+    align-items: center;
+    text-align: center;
+}
+
+#card {
+    flex-basis: 50%;
+}
+
+#card-img {
+    flex-basis: 50%;
+    margin: auto;
+}
+
+#card-img img {
+    width: 100%;
+}
+
+#card h1 {
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: 100;
+}
+
+#descrip {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+#descrip-img img {
+    width: 40px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+#descrip-text p {
+    font-size: 12px;
+    text-align: initial;
+    padding: 0 20px;
+}
+
+#descrip-text a {
+    font-size: 12px;
+}
+
+#offer {
+    width: 100%;
+    padding: 90px 0;
+    background: linear-gradient(to bottom, transparent, rgb(34, 169, 169)), url(../IMAGES/mg/Z6.jpg);
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+}
+
+#offer #title {
+    text-align: center;
+    padding-bottom: 70px;
+}
+
+#offer #title h1 {
+    margin: auto;
+    font-size: 50px;
+    color: grey;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+}
+
+#offer #title p {
+    font-size: 20px;
+    padding: 20px 0;
+}
+
+#offer #title a {
+    font-size: 30px;
+    border: 2px solid white;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+#footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+#footer #foot1 #contact {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    margin-left: 50px;
+}
+
+#footer #foot2 {
+    padding-top: 50px;
+}
+
+#footer #foot3 {
+    padding-top: 50px;
+}
+
+#copyright {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+    background: rgb(33, 93, 105);
+    font-size: 20px;
+}
+
+#serve {
+    width: 100%;
+    padding: 70px 0;
+}
+
+#title-tt {
+    text-align: center;
+    padding-bottom: 70px;
+}
+
+#title-tt h2 {
+    margin: auto;
+    font-size: 50px;
+    color: rgb(92, 180, 191);
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+}
+
+#title-tt P {
+    font-size: 30px;
+    color: greenyellow;
+    font-style: italic;
+}
+
+#serve {
+    background: rgb(63, 63, 63);
+}
+
+#servebx {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+    font-size: 17px;
+}
+
+#serve #servebx #bx {
+    flex-basis: 48%;
+    text-align: center;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#serve #servebx #bx img {
+    width: 100%;
+    border-radius: 7px;
+}
+
+#overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    border-radius: 7px;
+    cursor: pointer;
+    background: linear-gradient(transparent, #009688);
+    opacity: 0;
+    transition: 1s;
+}
+
+#bx:hover #overlay {
+    opacity: 1;
+}
+
+#sdescr {
+    width: 80%;
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 1s;
+}
+
+#bx:hover #sdescr {
+    bottom: 40%;
+    opacity: 2;
+}
+
+#tt {
+    width: 100%;
+    padding: 90px 0;
+    background: linear-gradient(to bottom, transparent, rgb(59, 150, 150)), url(../IMAGES/mg/X.jpg);
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+}
+
+#tit {
+    text-align: center;
+    padding-bottom: 70px;
+}
+
+#tit h1 {
+    margin: auto;
+    font-size: 50px;
+    color: grey;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+}
+
+#tit p {
+    font-size: 20px;
+    padding: 20px 0;
+}
+
+#blog {
+    padding-top: 5px;
+}
+
+#blog #container {
+    background: linear-gradient(to right, transparent, rgb(178, 144, 170)), url(../IMAGES/mg/Z8.jpg);
+    background-size: cover;
+    background-position: center;
+    font-size: large;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    position: relative;
+    box-shadow: #042a34;
+}
+
+#blog #container #kichwa {
+    font-size: 50px;
+    border-right: 2px dotted rgb(52, 78, 52);
+    padding: 0 7px;
+}
+
+#blog #container #mwili {
+    font-size: 19px;
+    text-decoration: wavy;
+    padding: 10px 7px;
+    width: 100%;
+}
+
+
+/*toast*/
+
+:root {
+    --success: #0ABF30;
+}
+
+.notifications {
+    position: fixed;
+    font-size: 1.5em;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.notifications :where(.toast, .column) {
+    display: flex;
+    align-items: center;
+}
+
+.notifications .toast {
+    width: 400px;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    border-radius: 4px;
+    padding: 16px 17px;
+    margin-bottom: 10px;
+    background: var(--light);
+    justify-content: space-between;
+    animation: show_toast 0.2s ease forwards;
+}
+
+@keyframes show_toast {
+    0% {
+        transform: translateX(100%);
+    }
+    40% {
+        transform: translateX(-5%);
+    }
+    80% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-10px);
+    }
+}
+
+.notifications .toast.hide {
+    animation: hide_toast 0.6s ease forwards;
+}
+
+@keyframes hide_toast {
+    0% {
+        transform: translateX(-10px);
+    }
+    40% {
+        transform: translateX(0%);
+    }
+    80% {
+        transform: translateX(-5%);
+    }
+    100% {
+        transform: translateX(calc(100% + 20px));
+    }
+}
+
+.toast::before {
+    position: absolute;
+    content: "";
+    height: 3px;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+    animation: progress 5s linear forwards;
+}
+
+@keyframes progress {
+    100% {
+        width: 0%;
+    }
+}
+
+.toast.success::before,
+.btn#success {
+    background: var(--success);
+}
+
+.toast .column i {
+    font-size: 1.75rem;
+}
+
+.toast.success .column i {
+    color: var(--success);
+}
+
+.toast .column span {
+    font-size: 2.07em;
+    margin-left: 12px;
+    color: rgb(11, 235, 164);
+}
+
+.toast i:last-child {
+    color: #aeb0d7;
+    cursor: pointer;
+}
+
+.toast i:last-child:hover {
+    color: rgb(63, 152, 79);
+}
